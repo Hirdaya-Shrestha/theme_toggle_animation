@@ -1,0 +1,5 @@
+# Paths to exclude from the published package
+demo_gifs/
+.dart_tool/
+.git/
+*.lock
