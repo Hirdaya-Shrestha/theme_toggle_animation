@@ -1,0 +1,22 @@
+name: theme_toggle_animation_example
+description: Example app for theme_toggle_animation package.
+publish_to: 'none'
+
+environment:
+  sdk: ^3.13.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  theme_toggle_animation:
+    path: ../
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+
+  assets:
+    - assets/custommask.gif

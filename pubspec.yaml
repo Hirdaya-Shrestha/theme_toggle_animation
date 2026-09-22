@@ -1,0 +1,30 @@
+name: theme_toggle_animation
+description: >-
+  Smooth, animated theme switching for Flutter. Circle, line, and custom GIF mask
+  animations with configurable directions, blur effects, and full customization.
+  Zero dependencies beyond Flutter SDK.
+version: 1.0.0
+homepage: https://github.com/Hirdaya-Shrestha/theme_toggle_animation
+repository: https://github.com/Hirdaya-Shrestha/theme_toggle_animation
+issue_tracker: https://github.com/Hirdaya-Shrestha/theme_toggle_animation/issues
+topics:
+  - theme
+  - animation
+  - dark-mode
+  - ui
+  - widget
+
+environment:
+  sdk: ^3.13.2
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
