@@ -4,11 +4,17 @@ import '../theme_animation_type.dart';
 
 enum _Corner { topLeft, topRight, bottomLeft, bottomRight }
 
-class const LineClipper({
-  required final double progress,
-  required final LineAnimationDirection direction,
-  final Offset? widgetOffset,
-}) extends CustomClipper<Path> {
+class LineClipper extends CustomClipper<Path> {
+  LineClipper({
+    required this.progress,
+    required this.direction,
+    this.widgetOffset,
+  });
+
+  final double progress;
+  final LineAnimationDirection direction;
+  final Offset? widgetOffset;
+
   @override
   Path getClip(Size size) {
     final path = Path();

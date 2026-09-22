@@ -1,3 +1,8 @@
+## 1.0.1
+
+* Convert classes to standard syntax for pub.dev compatibility
+* Minor improvements
+
 ## 1.0.0
 
 * Circle animation with 5 directions (corners + fromWidget)

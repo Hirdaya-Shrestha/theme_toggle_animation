@@ -11,7 +11,7 @@ Circle reveals, scanning lines, and custom GIF mask animations — zero dependen
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Flutter](https://img.shields.io/badge/flutter-%3E%3D3.0.0-blue.svg)](https://flutter.dev)
 
-[**Get Started**](#installation) · [**Examples**](#examples) · [**API**](#api-reference)
+[**Get Started**](#-installation) · [**Examples**](#-examples) · [**API**](#-api-reference)
 
 </div>
 
@@ -66,7 +66,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  theme_toggle_animation: ^1.0.0
+  theme_toggle_animation: ^1.0.1
 ```
 
 Then run:
@@ -296,7 +296,7 @@ ThemeToggleAnimation(
 ## 📋 Requirements
 
 - Flutter `>=3.0.0`
-- Dart SDK `^3.13.2`
+- Dart SDK `>=3.6.0 <4.0.0`
 
 ---
 

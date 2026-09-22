@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomMaskClipper({
-  required final double progress,
-  final Offset? widgetOffset,
-  final Path Function(Size size, Offset offset, double progress)? clipper,
-}) extends CustomClipper<Path> {
+class CustomMaskClipper extends CustomClipper<Path> {
+  CustomMaskClipper({required this.progress, this.widgetOffset, this.clipper});
+
+  final double progress;
+  final Offset? widgetOffset;
+  final Path Function(Size size, Offset offset, double progress)? clipper;
+
   @override
   Path getClip(Size size) {
     if (clipper != null) {

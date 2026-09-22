@@ -26,81 +26,99 @@ import 'theme_animation_type.dart';
 ///   child: MyApp(),
 /// )
 /// ```
-class const ThemeToggleAnimation({
-  super.key,
+class ThemeToggleAnimation extends StatefulWidget {
+  const ThemeToggleAnimation({
+    super.key,
+    required this.currentTheme,
+    required this.builder,
+    required this.child,
+    this.animationType = ThemeAnimationType.circle,
+    this.duration = const Duration(milliseconds: 750),
+    this.curve = Curves.easeInOut,
+    this.circleDirection = CircleAnimationDirection.ftl,
+    this.lineDirection = LineAnimationDirection.ltr,
+    this.blurAmount = 0.0,
+    this.clipper,
+    this.onToggle,
+    this.onAnimationStart,
+    this.onAnimationEnd,
+    this.enabled = true,
+    this.customMaskImage,
+    this.customMaskOffset,
+    this.customMaskSize,
+  });
 
   /// The current theme data.
-  required final ThemeData currentTheme,
+  final ThemeData currentTheme;
 
   /// Builder that provides the toggle callback.
   ///
   /// [toggle] switches the theme and plays the animation.
-  required final Widget Function(BuildContext context, VoidCallback toggle)
-  builder,
+  final Widget Function(BuildContext context, VoidCallback toggle) builder;
 
   /// The child widget tree rendered with the current theme.
-  required final Widget child,
+  final Widget child;
 
   /// Animation effect to use.
-  final ThemeAnimationType animationType = ThemeAnimationType.circle,
+  final ThemeAnimationType animationType;
 
   /// Animation duration.
-  final Duration duration = const Duration(milliseconds: 750),
+  final Duration duration;
 
   /// Animation curve.
-  final Curve curve = Curves.easeInOut,
+  final Curve curve;
 
   /// Direction for circle animations (only used with [ThemeAnimationType.circle]).
-  final CircleAnimationDirection circleDirection = CircleAnimationDirection.ftl,
+  final CircleAnimationDirection circleDirection;
 
   /// Direction for line animations (only used with [ThemeAnimationType.line]).
-  final LineAnimationDirection lineDirection = LineAnimationDirection.ltr,
+  final LineAnimationDirection lineDirection;
 
   /// Blur intensity applied to animation edges (only for circle and line types).
   ///
   /// Set to 0 for no blur. Ignored for [ThemeAnimationType.customMask].
-  final double blurAmount = 0.0,
+  final double blurAmount;
 
   /// Custom clip path provider (only used with [ThemeAnimationType.customMask]).
   ///
   /// Receives the widget size, tap offset, and animation progress (0..1).
-  final Path Function(Size size, Offset offset, double progress)? clipper,
+  final Path Function(Size size, Offset offset, double progress)? clipper;
 
   /// Called when the user taps the toggle button, after the old theme is
   /// captured. Use this to flip your theme state (e.g. `setState(() => isDark = !isDark)`).
-  final VoidCallback? onToggle,
+  final VoidCallback? onToggle;
 
   /// Called when the animation starts.
-  final VoidCallback? onAnimationStart,
+  final VoidCallback? onAnimationStart;
 
   /// Called when the animation completes.
-  final VoidCallback? onAnimationEnd,
+  final VoidCallback? onAnimationEnd;
 
   /// Whether the toggle animation is enabled.
   ///
   /// When false, [onToggle] is still called but no animation plays.
-  final bool enabled = true,
+  final bool enabled;
 
   /// Image provider for custom mask animation (only used with [ThemeAnimationType.customMask]).
   ///
   /// The image is used as a CSS-style mask: opaque pixels reveal the new theme.
   /// The GIF appears at [customMaskSize], plays for 80% of the duration,
   /// then expands to fill the screen.
-  final ImageProvider? customMaskImage,
+  final ImageProvider? customMaskImage;
 
   /// Position of the GIF mask on screen (only for [ThemeAnimationType.customMask]).
   ///
   /// The [Offset] is the top-left corner where the GIF is placed.
   /// If null, defaults to center of the screen.
-  final Offset? customMaskOffset,
+  final Offset? customMaskOffset;
 
   /// Size of the GIF mask during the play phase (only for [ThemeAnimationType.customMask]).
   ///
   /// The GIF scales from 0 to this size in the first 10% of the animation,
   /// stays at this size for 80% (plays the GIF), then expands to fill the screen.
   /// If null, defaults to 200x200 logical pixels.
-  final Size? customMaskSize,
-}) extends StatefulWidget {
+  final Size? customMaskSize;
+
   @override
   State<ThemeToggleAnimation> createState() => _ThemeToggleAnimationState();
 }
@@ -241,9 +259,8 @@ class _ThemeToggleAnimationState extends State<ThemeToggleAnimation>
   }
 
   Future<void> _captureScreenshot() async {
-    final boundary =
-        _repaintKey.currentContext?.findRenderObject()
-            as RenderRepaintBoundary?;
+    final boundary = _repaintKey.currentContext?.findRenderObject()
+        as RenderRepaintBoundary?;
     if (boundary == null) return;
 
     final image = await boundary.toImage(
@@ -367,8 +384,7 @@ class _ThemeToggleAnimationState extends State<ThemeToggleAnimation>
     final maskW = widget.customMaskSize?.width ?? 200.0;
     final maskH = widget.customMaskSize?.height ?? 200.0;
 
-    final anchor =
-        widget.customMaskOffset ??
+    final anchor = widget.customMaskOffset ??
         Offset((size.width - maskW) / 2, (size.height - maskH) / 2);
 
     double currentW;

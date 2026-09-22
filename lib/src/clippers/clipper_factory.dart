@@ -16,19 +16,19 @@ CustomClipper<Path> buildClipper({
 }) {
   return switch (type) {
     ThemeAnimationType.circle => CircleClipper(
-      progress: progress,
-      direction: circleDirection ?? CircleAnimationDirection.ftl,
-      widgetOffset: widgetOffset,
-    ),
+        progress: progress,
+        direction: circleDirection ?? CircleAnimationDirection.ftl,
+        widgetOffset: widgetOffset,
+      ),
     ThemeAnimationType.line => LineClipper(
-      progress: progress,
-      direction: lineDirection ?? LineAnimationDirection.ltr,
-      widgetOffset: widgetOffset,
-    ),
+        progress: progress,
+        direction: lineDirection ?? LineAnimationDirection.ltr,
+        widgetOffset: widgetOffset,
+      ),
     ThemeAnimationType.customMask => CustomMaskClipper(
-      progress: progress,
-      widgetOffset: widgetOffset,
-      clipper: customClipper,
-    ),
+        progress: progress,
+        widgetOffset: widgetOffset,
+        clipper: customClipper,
+      ),
   };
 }

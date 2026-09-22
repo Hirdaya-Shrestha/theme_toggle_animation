@@ -4,11 +4,17 @@ import 'package:flutter/material.dart';
 
 import '../theme_animation_type.dart';
 
-class CircleClipper({
-  required final double progress,
-  required final CircleAnimationDirection direction,
-  final Offset? widgetOffset,
-}) extends CustomClipper<Path> {
+class CircleClipper extends CustomClipper<Path> {
+  CircleClipper({
+    required this.progress,
+    required this.direction,
+    this.widgetOffset,
+  });
+
+  final double progress;
+  final CircleAnimationDirection direction;
+  final Offset? widgetOffset;
+
   @override
   Path getClip(Size size) {
     final center = _getCenter(size);
