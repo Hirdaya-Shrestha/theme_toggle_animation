@@ -6,9 +6,10 @@
 
 Circle reveals, scanning lines, and custom GIF mask animations — zero dependencies, fully customizable.
 
-[![Pub Version](https://img.shields.io/pub/v/theme_toggle_animation.svg)](https://pub.dev/packages/theme_toggle_animation)
+[![Pub](https://img.shields.io/pub/v/theme_toggle_animation.svg)](https://pub.dev/packages/theme_toggle_animation)
+[![CI](https://github.com/Hirdaya-Shrestha/theme_toggle_animation/actions/workflows/ci.yml/badge.svg)](https://github.com/Hirdaya-Shrestha/theme_toggle_animation/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Flutter Platform](https://img.shields.io/badge/flutter-%3E%3D3.0.0-blue.svg)](https://flutter.dev)
+[![Flutter](https://img.shields.io/badge/flutter-%3E%3D3.0.0-blue.svg)](https://flutter.dev)
 
 [**Get Started**](#installation) · [**Examples**](#examples) · [**API**](#api-reference)
 
@@ -307,7 +308,7 @@ MIT © Hirdaya Shrestha — see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**Made with ❤️ for the Flutter community**
+**Made with ❤️ by Hirdaya Shrestha**
 
 [Report Bug](https://github.com/Hirdaya-Shrestha/theme_toggle_animation/issues) · [Request Feature](https://github.com/Hirdaya-Shrestha/theme_toggle_animation/issues)
 

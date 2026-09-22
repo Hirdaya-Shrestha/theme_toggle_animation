@@ -3,3 +3,4 @@ demo_gifs/
 .dart_tool/
 .git/
 *.lock
+build/
