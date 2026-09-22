@@ -1,3 +1,9 @@
+## 1.0.3
+
+* Fix custom mask expanding with stretched aspect ratio (now scales uniformly)
+* Cache screenshot, mask content, and clip content in RepaintBoundary to eliminate animation lag
+* Stop redundant rebuilds from GIF frames while idle
+
 ## 1.0.2
 
 * Shorten pubspec description to stay within pub.dev's recommended length

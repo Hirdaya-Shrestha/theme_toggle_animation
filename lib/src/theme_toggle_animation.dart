@@ -251,9 +251,8 @@ class _ThemeToggleAnimationState extends State<ThemeToggleAnimation>
     );
 
     _maskImageListener = ImageStreamListener((info, _) {
-      if (mounted) {
-        setState(() => _resolvedMaskImage = info.image);
-      }
+      if (!mounted) return;
+      _resolvedMaskImage = info.image;
     });
     _maskImageStream = stream;
     stream.addListener(_maskImageListener!);
@@ -303,11 +302,13 @@ class _ThemeToggleAnimationState extends State<ThemeToggleAnimation>
   }
 
   Widget _buildScreenshotLayer() {
-    return RawImage(
-      image: _screenshot,
-      fit: BoxFit.cover,
-      width: double.infinity,
-      height: double.infinity,
+    return RepaintBoundary(
+      child: RawImage(
+        image: _screenshot,
+        fit: BoxFit.cover,
+        width: double.infinity,
+        height: double.infinity,
+      ),
     );
   }
 
@@ -329,18 +330,16 @@ class _ThemeToggleAnimationState extends State<ThemeToggleAnimation>
           return _buildImageMask(content, size, progress);
         }
 
-        final clipped = RepaintBoundary(
-          child: ClipPath(
-            clipper: buildClipper(
-              type: widget.animationType,
-              progress: progress,
-              circleDirection: _isCircleType ? widget.circleDirection : null,
-              lineDirection: _isLineType ? widget.lineDirection : null,
-              widgetOffset: _needsWidgetOffset ? _capturedOffset : null,
-              customClipper: _isCustomMaskType ? widget.clipper : null,
-            ),
-            child: content,
+        final clipped = ClipPath(
+          clipper: buildClipper(
+            type: widget.animationType,
+            progress: progress,
+            circleDirection: _isCircleType ? widget.circleDirection : null,
+            lineDirection: _isLineType ? widget.lineDirection : null,
+            widgetOffset: _needsWidgetOffset ? _capturedOffset : null,
+            customClipper: _isCustomMaskType ? widget.clipper : null,
           ),
+          child: RepaintBoundary(child: content),
         );
 
         if (_hasBlur) {
@@ -399,8 +398,10 @@ class _ThemeToggleAnimationState extends State<ThemeToggleAnimation>
       currentH = maskH;
     } else {
       final t = (progress - 0.9) / 0.1;
-      currentW = maskW + (size.width * 2 - maskW) * t;
-      currentH = maskH + (size.height * 2 - maskH) * t;
+      final cover = max(size.width / maskW, size.height / maskH);
+      final factor = 1 + (cover - 1) * t;
+      currentW = maskW * factor;
+      currentH = maskH * factor;
     }
 
     if (currentW <= 0 || currentH <= 0) return const SizedBox.expand();
@@ -441,7 +442,7 @@ class _ThemeToggleAnimationState extends State<ThemeToggleAnimation>
         );
       },
       blendMode: BlendMode.dstIn,
-      child: content,
+      child: RepaintBoundary(child: content),
     );
   }
 }

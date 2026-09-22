@@ -1,6 +1,6 @@
 name: theme_toggle_animation
 description: Smooth animated theme switching for Flutter with circle, line, and custom GIF mask effects. Zero dependencies.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/Hirdaya-Shrestha/theme_toggle_animation
 repository: https://github.com/Hirdaya-Shrestha/theme_toggle_animation
 issue_tracker: https://github.com/Hirdaya-Shrestha/theme_toggle_animation/issues

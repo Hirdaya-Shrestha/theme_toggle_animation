@@ -66,7 +66,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  theme_toggle_animation: ^1.0.2
+  theme_toggle_animation: ^1.0.3
 ```
 
 Then run:
