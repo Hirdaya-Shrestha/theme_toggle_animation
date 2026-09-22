@@ -52,12 +52,18 @@ class _DemoPageState extends State<DemoPage> {
       onToggle: () => setState(() => _isDark = !_isDark),
       onAnimationStart: () {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Animation started'), duration: Duration(milliseconds: 500)),
+          const SnackBar(
+            content: Text('Animation started'),
+            duration: Duration(milliseconds: 500),
+          ),
         );
       },
       onAnimationEnd: () {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Animation complete'), duration: Duration(milliseconds: 500)),
+          const SnackBar(
+            content: Text('Animation complete'),
+            duration: Duration(milliseconds: 500),
+          ),
         );
       },
       builder: (context, toggle) => _buildContent(context, toggle),
@@ -217,8 +223,10 @@ class _DemoPageState extends State<DemoPage> {
   Widget _buildEnabledToggle(BuildContext context) {
     return Card(
       child: SwitchListTile(
-        title: Text('Animation enabled',
-            style: Theme.of(context).textTheme.titleMedium),
+        title: Text(
+          'Animation enabled',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
         subtitle: const Text('Disable to skip animation on toggle'),
         value: _enabled,
         onChanged: (v) => setState(() => _enabled = v),

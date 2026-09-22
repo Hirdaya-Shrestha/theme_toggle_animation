@@ -202,6 +202,9 @@ class _ThemeToggleAnimationState extends State<ThemeToggleAnimation>
 
     _oldTheme = widget.currentTheme;
 
+    // Wait for the current frame to finish painting so the RepaintBoundary
+    // is valid for toImage().
+    await WidgetsBinding.instance.endOfFrame;
     await _captureScreenshot();
 
     widget.onToggle?.call();
