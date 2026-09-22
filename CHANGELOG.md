@@ -1,3 +1,8 @@
+## 1.0.2
+
+* Shorten pubspec description to stay within pub.dev's recommended length
+* README.md updates with proper demo url
+
 ## 1.0.1
 
 * Convert classes to standard syntax for pub.dev compatibility

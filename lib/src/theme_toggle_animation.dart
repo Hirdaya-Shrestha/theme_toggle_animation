@@ -53,7 +53,8 @@ class ThemeToggleAnimation extends StatefulWidget {
 
   /// Builder that provides the toggle callback.
   ///
-  /// [toggle] switches the theme and plays the animation.
+  /// The provided `toggle` callback switches the theme and plays the
+  /// animation.
   final Widget Function(BuildContext context, VoidCallback toggle) builder;
 
   /// The child widget tree rendered with the current theme.

@@ -4,3 +4,4 @@ demo_gifs/
 .git/
 *.lock
 build/
+.gitignore

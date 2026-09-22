@@ -26,9 +26,9 @@ Circle reveals, scanning lines, and custom GIF mask animations — zero dependen
     <td align="center" width="33%"><b>Custom Mask</b></td>
   </tr>
   <tr>
-    <td align="center"><img src="https://github.com/Hirdaya-Shrestha/theme_toggle_animation/blob/main/demo_gifs/circle.gif" width="240" alt="Circle animation demo"/></td>
-    <td align="center"><img src="https://github.com/Hirdaya-Shrestha/theme_toggle_animation/blob/main/demo_gifs/line.gif" width="240" alt="Line animation demo"/></td>
-    <td align="center"><img src="https://github.com/Hirdaya-Shrestha/theme_toggle_animation/blob/main/demo_gifs/custom.gif" width="240" alt="Custom mask animation demo"/></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/Hirdaya-Shrestha/theme_toggle_animation/main/demo_gifs/circle.gif" width="240" alt="Circle animation demo"/></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/Hirdaya-Shrestha/theme_toggle_animation/main/demo_gifs/line.gif" width="240" alt="Line animation demo"/></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/Hirdaya-Shrestha/theme_toggle_animation/main/demo_gifs/custom.gif" width="240" alt="Custom mask animation demo"/></td>
   </tr>
   <tr>
     <td align="center">Expanding circle reveal from any corner or tap position.</td>
@@ -66,7 +66,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  theme_toggle_animation: ^1.0.1
+  theme_toggle_animation: ^1.0.2
 ```
 
 Then run:
@@ -296,7 +296,7 @@ ThemeToggleAnimation(
 ## 📋 Requirements
 
 - Flutter `>=3.0.0`
-- Dart SDK `>=3.6.0 <4.0.0`
+- Dart SDK `^3.0.0`
 
 ---
 
