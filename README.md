@@ -4,7 +4,7 @@
 
 **Smooth, animated theme switching for Flutter.**
 
-Circle reveals, scanning lines, and custom GIF mask animations — zero dependencies, fully customizable.
+Circle reveals, scanning lines, and custom GIF mask animations — fully customizable.
 
 [![Pub](https://img.shields.io/pub/v/theme_toggle_animation.svg)](https://pub.dev/packages/theme_toggle_animation)
 [![CI](https://github.com/Hirdaya-Shrestha/theme_toggle_animation/actions/workflows/ci.yml/badge.svg)](https://github.com/Hirdaya-Shrestha/theme_toggle_animation/actions/workflows/ci.yml)
@@ -14,6 +14,20 @@ Circle reveals, scanning lines, and custom GIF mask animations — zero dependen
 [**Get Started**](#-installation) · [**Examples**](#-examples) · [**API**](#-api-reference)
 
 </div>
+
+---
+
+## What's New in 2.0.0
+
+> [!NOTE]
+> **Breaking change**: This package now uses `package:material_ui/material_ui.dart` (replacing `package:flutter/material.dart`). Update your imports accordingly.
+
+```diff
+- import 'package:flutter/material.dart';
++ import 'package:material_ui/material_ui.dart';
+```
+
+No functional changes — animation behavior is identical.
 
 ---
 
@@ -56,7 +70,8 @@ Circle reveals, scanning lines, and custom GIF mask animations — zero dependen
 | 🔔 **Lifecycle callbacks** | `onAnimationStart` / `onAnimationEnd` |
 | ⚡ **Optimized** | RepaintBoundary, content caching, GPU clips |
 | 🧩 **State management agnostic** | Provider, Riverpod, Bloc, GetX — all work |
-| 📦 **Zero dependencies** | Only Flutter SDK |
+| 📦 **Lightweight** | Minimal dependency footprint |
+
 
 ---
 
@@ -66,7 +81,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  theme_toggle_animation: ^1.0.3
+  theme_toggle_animation: ^2.0.0
 ```
 
 Then run:

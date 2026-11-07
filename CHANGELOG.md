@@ -1,3 +1,8 @@
+## 2.0.0
+
+- **BREAKING**: Migrate from `package:flutter/material.dart` to `package:material_ui/material_ui.dart`
+- No functional changes; this is a dependency/import migration only
+
 ## 1.0.3
 
 * Fix custom mask expanding with stretched aspect ratio (now scales uniformly)

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class CustomMaskClipper extends CustomClipper<Path> {
   CustomMaskClipper({required this.progress, this.widgetOffset, this.clipper});
